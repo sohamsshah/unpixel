@@ -6,10 +6,10 @@ export function SearchBox({ handleSearch, ...props }) {
   return (
     <Box display={"flex"} alignItems="center" {...props}>
       <Input
-        mr="4"
+        mr="2"
         onChange={(e) => setQuery(e.target.value)}
         placeholder="Search Image"
-        w={"28rem"}
+        w={{ base: "10rem", md: "28rem" }}
       />
       <Button type="submit" onClick={() => handleSearch(query)}>
         Search

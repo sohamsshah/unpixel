@@ -11,17 +11,20 @@ export function Navbar({ hasSearchBox = true, ...props }) {
   return (
     <Box
       display="flex"
-      alignItems="center"
-      justifyContent="space-between"
+      flexWrap={"wrap"}
+      alignItems={{ base: "center" }}
+      justifyContent={{ base: "flex-start", md: "space-between" }}
       my={8}
-      mx={24}
+      mx={{ base: "8", md: "12", lg: "24" }}
       {...props}
     >
       <Image w={100} h={100} src={UnPixel} />
-      {hasSearchBox && <SearchBox handleSearch={handleSearch} />}
-      <Link href={"https://github.com/sohamsshah"} isExternal>
-        <PhGithubLogoFill fontSize="40px" />
-      </Link>
+      <Box display={"flex"} flexWrap="wrap">
+        {hasSearchBox && <SearchBox mr="4" handleSearch={handleSearch} />}
+        <Link href={"https://github.com/sohamsshah"} isExternal>
+          <PhGithubLogoFill fontSize="40px" />
+        </Link>
+      </Box>
     </Box>
   );
 }

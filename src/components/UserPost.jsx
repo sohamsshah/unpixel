@@ -18,7 +18,7 @@ export function UserPost({ photo, ...props }) {
     <Box {...props}>
       <Modal size="4xl" isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
-        <ModalContent>
+        <ModalContent m={4}>
           <ModalHeader>
             <ModalCloseButton />
           </ModalHeader>

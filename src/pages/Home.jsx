@@ -1,9 +1,11 @@
 import InfiniteScroll from "sodium-infinite-scroller";
-import { Box, Spinner } from "@chakra-ui/react";
+import { Box, Spinner, Skeleton } from "@chakra-ui/react";
 import { Feed } from "../components/Feed";
 import { useMemo, useState } from "react";
 import { useFetch } from "../hooks/useFetch";
 import { Layout } from "../components/Layout";
+import { EmptyState } from "../components/EmptyState";
+import { Error } from "../components/Error";
 export function Home() {
   const [page, setPage] = useState(1);
   console.log(process.env);
@@ -23,21 +25,33 @@ export function Home() {
     options
   );
 
+  if (status === "error") {
+    return <Error message={error} />;
+  }
+
+  if (Object.keys(data).length === 0 && status === "fetching") {
+    return <Skeleton m="4" height="20rem" />;
+  }
+
   return (
     <>
-      {data.total_pages && (
-        <Layout>
-          {console.log(data.total_pages > page, data.total_pages, page)}
+      <Layout>
+        {data?.total_pages !== 0 ? (
           <InfiniteScroll
             hasMore={data.total_pages > page}
             loadMore={() => setPage((prev) => prev + 1)}
             loader={<Spinner />}
             threshold={0.2}
+            endContent={
+              <EmptyState text="Congratulations! You have reached the end" />
+            }
           >
             <Feed data={data?.results} />
           </InfiniteScroll>
-        </Layout>
-      )}
+        ) : (
+          <EmptyState text="Nothing to show" />
+        )}
+      </Layout>
     </>
   );
 }

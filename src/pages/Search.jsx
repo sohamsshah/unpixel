@@ -3,10 +3,11 @@ import { useState, useMemo, useEffect, useRef } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useFetch } from "../hooks/useFetch";
 import InfiniteScroll from "sodium-infinite-scroller";
-import { EndContent } from "../components/EndContent";
+
 import { Feed } from "../components/Feed";
 import { Layout } from "../components/Layout";
 import { SearchBox } from "../components/SearchBox";
+import { EmptyState } from "../components/EmptyState";
 
 export function Search() {
   const { query } = useParams();
@@ -48,7 +49,7 @@ export function Search() {
   console.log(ref.current.isNewQuery);
 
   if (Object.keys(data).length === 0 && status === "fetching") {
-    return <Skeleton height="10rem" />;
+    return <Skeleton m="4" height="20rem" />;
   }
   if (status === "error") {
     return <>Something went wrong...</>;
@@ -68,13 +69,15 @@ export function Search() {
             hasMore={data.total_pages > page}
             loadMore={() => setPage((prev) => prev + 1)}
             loader={<Spinner />}
-            endContent={<EndContent />}
+            endContent={
+              <EmptyState text="Congratulations! You have reached the end" />
+            }
             threshold={0.2}
           >
             <Feed data={data?.results} />
           </InfiniteScroll>
         ) : (
-          <>Nothing to show</>
+          <EmptyState text="Nothing to show for this query" />
         )}
       </Layout>
     </>
