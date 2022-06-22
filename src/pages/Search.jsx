@@ -1,5 +1,5 @@
 import { Box, Skeleton, Spinner, Text } from "@chakra-ui/react";
-import { useState, useMemo, useEffect, useRef } from "react";
+import { useState, useMemo, useRef } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useFetch } from "../hooks/useFetch";
 import InfiniteScroll from "sodium-infinite-scroller";
@@ -39,14 +39,12 @@ export function Search() {
     };
   }
   const options = useMemo(createOptions, [page, query]);
-  const { data, status, error } = useFetch(
+  const { data, status } = useFetch(
     `https://api.unsplash.com/search/photos`,
     options
   );
 
   const navigate = useNavigate();
-
-  console.log(ref.current.isNewQuery);
 
   if (Object.keys(data).length === 0 && status === "fetching") {
     return <Skeleton m="4" height="20rem" />;

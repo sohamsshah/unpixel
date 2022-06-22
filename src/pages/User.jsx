@@ -25,7 +25,7 @@ export function User() {
     status,
     error,
   } = useFetch(`https://api.unsplash.com/users/${username}`, options);
-  console.log(user, status, error);
+
   const [isGridView, setIsGridView] = useState(true);
 
   function handleView() {

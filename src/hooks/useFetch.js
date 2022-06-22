@@ -15,7 +15,6 @@ export const useFetch = (url, options) => {
       case "FETCHING":
         return { ...initialState, status: "fetching", data: state.data ?? {} };
       case "FETCHED":
-        console.log(options.params.isNewQuery);
         if (options.params.isNewQuery) {
           return {
             status: "fetched",
@@ -57,7 +56,7 @@ export const useFetch = (url, options) => {
           const response = await axios.get(url, {
             params: { ...options.params },
           });
-          console.log(response);
+
           const data = await response.data;
           cache.current[hashValue] = data;
           if (cancelRequest) return;

@@ -13,7 +13,7 @@ import { PostImage } from "./PostImage";
 
 export function UserPost({ photo, ...props }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  console.log(photo);
+
   return (
     <Box {...props}>
       <Modal size="4xl" isOpen={isOpen} onClose={onClose}>

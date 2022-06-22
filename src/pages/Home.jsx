@@ -1,5 +1,5 @@
 import InfiniteScroll from "sodium-infinite-scroller";
-import { Box, Spinner, Skeleton } from "@chakra-ui/react";
+import { Spinner, Skeleton } from "@chakra-ui/react";
 import { Feed } from "../components/Feed";
 import { useMemo, useState } from "react";
 import { useFetch } from "../hooks/useFetch";
@@ -8,7 +8,7 @@ import { EmptyState } from "../components/EmptyState";
 import { Error } from "../components/Error";
 export function Home() {
   const [page, setPage] = useState(1);
-  console.log(process.env);
+
   function createOptions() {
     return {
       params: {

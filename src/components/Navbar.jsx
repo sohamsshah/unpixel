@@ -1,4 +1,4 @@
-import { Box, Button, Image, Input, Link } from "@chakra-ui/react";
+import { Box, Image, Link } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import { PhGithubLogoFill } from "../assets/icons";
