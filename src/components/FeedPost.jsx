@@ -156,7 +156,7 @@ export function FeedPost({ post }) {
                   <Box display="flex" justifyContent={"center"}>
                     <LazyLoadImage
                       src={post.urls.small}
-                      alt={"Alt"}
+                      alt={post.description ?? "Unsplash Image"}
                       effect="blur"
                     />
                   </Box>
@@ -207,7 +207,11 @@ export function FeedPost({ post }) {
         alignItems="flex-start"
         m="4"
       >
-        <PostImage src={post.urls.small} handleClick={handleOpenModal} />
+        <PostImage
+          post={post}
+          src={post.urls.small}
+          handleClick={handleOpenModal}
+        />
         <Box>
           📸 Photo by:{" "}
           <Link as={NavLink} to={`/users/${post.user.username}`}>

@@ -1,6 +1,6 @@
 import { Box } from "@chakra-ui/react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-export function PostImage({ src, handleClick, ...props }) {
+export function PostImage({ post, src, handleClick, ...props }) {
   return (
     <Box
       display="flex"
@@ -18,7 +18,11 @@ export function PostImage({ src, handleClick, ...props }) {
           filter: "brightness(70%)",
         }}
       >
-        <LazyLoadImage src={src} alt={"Alt"} effect="blur" />
+        <LazyLoadImage
+          src={src}
+          alt={post.description ?? "Unsplash Image"}
+          effect="blur"
+        />
       </Box>
     </Box>
   );

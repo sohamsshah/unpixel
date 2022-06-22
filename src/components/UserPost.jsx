@@ -28,7 +28,7 @@ export function UserPost({ photo, ...props }) {
                 <Box display="flex" justifyContent={"center"}>
                   <LazyLoadImage
                     src={photo.urls.small}
-                    alt={"Alt"}
+                    alt={photo.description ?? "Unsplash Image"}
                     effect="blur"
                   />
                 </Box>
@@ -37,7 +37,7 @@ export function UserPost({ photo, ...props }) {
           </ModalBody>
         </ModalContent>
       </Modal>
-      <PostImage handleClick={onOpen} src={photo.urls.small} />
+      <PostImage post={photo} handleClick={onOpen} src={photo.urls.small} />
     </Box>
   );
 }
