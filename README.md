@@ -1,70 +1,107 @@
-# Getting Started with Create React App
+<p align="center">
+  <a href="https://github.com/sohamsshah/unpixel" rel="noopener" target="_blank"><img width="150" src="./src/assets/unPIXEL.svg" alt="unpixel Logo"></a></p>
+</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# unPixel
 
-## Available Scripts
+The Go-to place for High Quality, Beautiful and Picturesque 3-D matrices of Pixels - perfectly for you to describe your thoughts in high resolution! 🖼⚡ You can view, search and download everything that you want! Powered By [Unsplash](https://unsplash.com/)!
 
-In the project directory, you can run:
+### [unPixel](https://unpixel.vercel.app) is LIVE!
 
-### `npm start`
+## **🧐 Features**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+There are multiple features implemented on unPixel to make high quality pictures accessible to you easier like never before.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+> 🖼 **unPixel** has:
 
-### `npm test`
+- 🔎 **Search from over 2 million free high-resolution images** (powered by [Unsplash API](https://unsplash.com/documentation))
+- ♾ **Infinite Scrolling**
+- 💾 **Cached for faster and performant experience**
+- ⚡ **Blazing Fast on all devices**
+- 🔖 **Toggle between different Views**
+- 💻 **Fully Responsive**
+- ⤵️ **Download Pictures with a click**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🛠️ **Spinning Up Development Environment**
 
-### `npm run build`
+1. Clone the repository
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+git clone https://github.com/sohamsshah/unpixel.git
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. Change the working directory
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+cd unpixel
+```
 
-### `npm run eject`
+3. Install dependencies
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+yarn
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+4. Create `.env.local` file in root and add your variables
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+REACT_APP_ACCESS_KEY='your unsplash api key here'
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+5. Run unpixel
 
-## Learn More
+```bash
+yarn start
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+You are all set! Open [localhost:3000](http://localhost:3000/) to see the app.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## **💻 Built with**
 
-### Code Splitting
+- [React](https://reactjs.org)
+- [React Lazy Load Component](https://www.npmjs.com/package/react-lazy-load-image-component): for lazy loading images and optimized Images
+- [sodium-infinite-scroller](https://www.npmjs.com/package/sodium-infinite-scroller): My own Infinite Scroll Package which I built an year ago 😅
+- [Vercel](http://vercel.com/): for hosting
+- [Chakra UI](https://chakra-ui.com/): for beautiful UI styling
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 🛡️ License
 
-### Analyzing the Bundle Size
+This project is licensed under the MIT License - see the [`LICENSE`](LICENSE) file for details.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## **💖 We love Contributions**
 
-### Making a Progressive Web App
+- **unpixel** is truly Open Source. Any sort of contribution to this project are highly appreciated. Create a branch, add commits, and [open a pull request](https://github.com/sohamsshah/unpixel/compare).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- Please read [`CONTRIBUTING`](CONTRIBUTING.md) for details on our [`CODE OF CONDUCT`](CODE_OF_CONDUCT.md), and the process for submitting pull requests to **unpixel**.
 
-### Advanced Configuration
+## 🦄 Deploy
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+<a href="https://vercel.com/new/project?template=https://github.com/sohamsshah/unpixel">
+<img src="https://vercel.com/button" height="37.5px" />
+</a>
+<a href="https://app.netlify.com/start/deploy?repository=https://github.com/sohamsshah/unpixel">
+<img src="https://www.netlify.com/img/deploy/button.svg" height="37.5px" />
+</a>
+<a href="https://cloud.digitalocean.com/apps/new?repo=https://github.com/sohamsshah/unpixel">
+<img src="https://camo.githubusercontent.com/df21703b4229f8d44f76c2d56073657a4ab450ca4566ba5d24d05bf528c298f8/68747470733a2f2f7777772e6465706c6f79746f646f2e636f6d2f646f2d62746e2d626c75652e737667" height="37.5px" />
+</a>
 
-### Deployment
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## **👨‍💻 Author**
 
-### `npm run build` fails to minify
+### 👤 Soham Shah
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Twitter: [@sohamsshah\_](https://twitter.com/sohamsshah_)
+- Github: [@sohamsshah](https://github.com/sohamsshah)
+- Hashnode: [@sohamsshah](https://hashnode.com/@sohamsshah)
+- LinkedIN: [@sohamshah456](https://www.linkedin.com/in/sohamshah456/)
+
+---
+
+<h3 align="center">
+<b>Liked unpixel📸?
+
+O Stargazer✨! Can you ⭐️ this too? </b>
+
+</h3>
