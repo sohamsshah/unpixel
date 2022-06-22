@@ -1,13 +1,14 @@
 import { Box, Skeleton, Spinner, Text } from "@chakra-ui/react";
 import { useState, useMemo, useRef } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { useFetch } from "../hooks/useFetch";
+import { useFetch } from "../hooks";
 import InfiniteScroll from "sodium-infinite-scroller";
 
-import { Feed } from "../components/Feed";
-import { Layout } from "../components/Layout";
-import { SearchBox } from "../components/SearchBox";
-import { EmptyState } from "../components/EmptyState";
+import { Feed } from "../components";
+import { Layout } from "../components";
+import { SearchBox } from "../components";
+import { EmptyState } from "../components";
+import { DEFAULT_PER_PAGE } from "../static/constants";
 
 export function Search() {
   const { query } = useParams();
@@ -31,7 +32,7 @@ export function Search() {
     return {
       params: {
         page,
-        per_page: 10,
+        per_page: DEFAULT_PER_PAGE,
         query,
         isNewQuery: ref.current.isNewQuery,
         client_id: process.env.REACT_APP_ACCESS_KEY,

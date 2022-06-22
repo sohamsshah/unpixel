@@ -1,11 +1,12 @@
 import InfiniteScroll from "sodium-infinite-scroller";
 import { Spinner, Skeleton } from "@chakra-ui/react";
-import { Feed } from "../components/Feed";
+import { Feed } from "../components";
 import { useMemo, useState } from "react";
-import { useFetch } from "../hooks/useFetch";
-import { Layout } from "../components/Layout";
-import { EmptyState } from "../components/EmptyState";
-import { Error } from "../components/Error";
+import { useFetch } from "../hooks";
+import { Layout } from "../components";
+import { EmptyState } from "../components";
+import { Error } from "../components";
+import { DEFAULT_QUERY, DEFAULT_PER_PAGE } from "../static/constants";
 export function Home() {
   const [page, setPage] = useState(1);
 
@@ -13,8 +14,8 @@ export function Home() {
     return {
       params: {
         page,
-        per_page: 10,
-        query: "code",
+        per_page: DEFAULT_PER_PAGE,
+        query: DEFAULT_QUERY,
         client_id: process.env.REACT_APP_ACCESS_KEY,
       },
     };

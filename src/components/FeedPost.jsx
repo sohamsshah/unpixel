@@ -21,7 +21,7 @@ import "react-lazy-load-image-component/src/effects/blur.css";
 import { useEffect, useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { PostImage } from "./PostImage";
-export function FeedPost({ post }) {
+export function FeedPost({ post, ...props }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const navigate = useNavigate();
   const [isModalImageTimerRunning, setIsModalImageTimerRunning] =
@@ -38,7 +38,7 @@ export function FeedPost({ post }) {
     }
   }, [isModalImageTimerRunning]);
   return (
-    <Box>
+    <Box {...props}>
       <Box>
         <Modal p="20rem" size="4xl" isOpen={isOpen} onClose={onClose}>
           <ModalOverlay />

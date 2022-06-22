@@ -2,6 +2,13 @@ import axios from "axios";
 import { useEffect, useRef, useReducer } from "react";
 import { hashValues } from "../utils/hashValues";
 
+/**
+ * useFetch hook is perform fetch calls with ease, cache results and make the calls simple
+ *
+ * @param {function:function} url - A request url.
+ * @param {object} options - options object that contains parameters etc. other fields to be used in the hook
+ * @returns {data, status, error} - different states
+ */
 export const useFetch = (url, options) => {
   const cache = useRef({});
   const initialState = {
@@ -9,7 +16,6 @@ export const useFetch = (url, options) => {
     error: null,
     data: {},
   };
-  // states -> fetching, fetched, error
   const [state, dispatch] = useReducer((state, action) => {
     switch (action.type) {
       case "FETCHING":
