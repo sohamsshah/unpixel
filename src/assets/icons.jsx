@@ -161,3 +161,37 @@ export function PhGithubLogoFill(props) {
     </svg>
   );
 }
+
+export function PhDownloadFill(props) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
+      height="1em"
+      viewBox="0 0 256 256"
+      {...props}
+    >
+      <path
+        fill="currentColor"
+        d="M74.3 85.7a8.1 8.1 0 0 1 11.4-11.4l34.3 34.4V24a8 8 0 0 1 16 0v84.7l34.3-34.4a8.1 8.1 0 0 1 11.4 11.4l-48 48a8.2 8.2 0 0 1-11.4 0ZM240 136v64a16 16 0 0 1-16 16H32a16 16 0 0 1-16-16v-64a16 16 0 0 1 16-16h52.4a3.6 3.6 0 0 1 2.8 1.2L111 145a24.1 24.1 0 0 0 34 0l23.8-23.8a3.6 3.6 0 0 1 2.8-1.2H224a16 16 0 0 1 16 16Zm-40 32a12 12 0 1 0-12 12a12 12 0 0 0 12-12Z"
+      ></path>
+    </svg>
+  );
+}
+
+export function PhInstagramLogoFill(props) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
+      height="1em"
+      viewBox="0 0 256 256"
+      {...props}
+    >
+      <path
+        fill="currentColor"
+        d="M160 128a32 32 0 1 1-32-32a32.1 32.1 0 0 1 32 32Zm68-44v88a56 56 0 0 1-56 56H84a56 56 0 0 1-56-56V84a56 56 0 0 1 56-56h88a56 56 0 0 1 56 56Zm-52 44a48 48 0 1 0-48 48a48 48 0 0 0 48-48Zm16-52a12 12 0 1 0-12 12a12 12 0 0 0 12-12Z"
+      ></path>
+    </svg>
+  );
+}

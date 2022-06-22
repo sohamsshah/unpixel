@@ -61,7 +61,7 @@ export function User() {
               flexWrap={"wrap"}
             >
               {user.photos.map((photo) => {
-                return <UserPost my={4} photo={photo} />;
+                return <UserPost id={photo.id} my={4} photo={photo} />;
               })}
             </Box>
           </Box>

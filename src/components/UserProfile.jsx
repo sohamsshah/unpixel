@@ -1,12 +1,22 @@
-import { Box, Avatar, Text } from "@chakra-ui/react";
+import { Box, Avatar, Text, Link } from "@chakra-ui/react";
 import {
   PhApertureBold,
+  PhGlobeBold,
   PhHeartStraightFill,
+  PhInstagramLogo,
   PhPictureInPictureBold,
+  PhTwitterLogoFill,
 } from "../assets/icons";
 export function UserProfile({ user, ...props }) {
+  console.log(user);
   return (
-    <Box p="8" flexDirection="column" display={"flex"} alignItems="center">
+    <Box
+      p="8"
+      flexDirection="column"
+      display={"flex"}
+      alignItems="center"
+      {...props}
+    >
       <Avatar size="4xl" src={user.profile_image.large} />
       <Box py="4" px="32" textAlign={"center"}>
         <Text fontWeight="bold" fontSize={"4xl"}>
@@ -57,7 +67,27 @@ export function UserProfile({ user, ...props }) {
         </Box>
       </Box>
 
-      <Box display={"flex"}>{/* Render Social Profiles */}</Box>
+      <Box display={"flex"} mt="6">
+        {user.social.instagram_username && (
+          <Link
+            mr="2"
+            href={`https://www.instagram.com/${user.social.instagram_username}`}
+            isExternal
+          >
+            <PhInstagramLogo fontSize="40px" />
+          </Link>
+        )}
+        {user.social.portfolio_url && (
+          <Link mr="2" href={`${user.social.portfolio_url}`} isExternal>
+            <PhGlobeBold fontSize="40px" />
+          </Link>
+        )}
+        {user.social.twitter_username && (
+          <Link mr="2" href={`${user.social.twitter_username}`} isExternal>
+            <PhTwitterLogoFill fontSize="40px" />
+          </Link>
+        )}
+      </Box>
     </Box>
   );
 }

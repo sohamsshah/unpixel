@@ -11,9 +11,12 @@ import {
   Button,
   Progress,
   Avatar,
+  Link as ChakraLink,
+  IconButton,
 } from "@chakra-ui/react";
 import {
   PhArrowCounterClockwiseFill,
+  PhDownloadFill,
   PhHeartStraightFill,
 } from "../assets/icons";
 import { LazyLoadImage } from "react-lazy-load-image-component";
@@ -24,6 +27,7 @@ import { PostImage } from "./PostImage";
 export function FeedPost({ post, ...props }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const navigate = useNavigate();
+  console.log(post.links.download);
   const [isModalImageTimerRunning, setIsModalImageTimerRunning] =
     useState(false);
   function handleOpenModal() {
@@ -161,37 +165,54 @@ export function FeedPost({ post, ...props }) {
                     />
                   </Box>
                 </Box>
-                <Box py={4}>
-                  <Text display="flex" alignItems="center">
-                    <PhHeartStraightFill color="tomato" fontSize="30px" />
-                    <Text px="1" fontWeight="500" fontSize={"lg"}>
-                      {post.likes}{" "}
+                <Box
+                  py={4}
+                  display="flex"
+                  justifyContent={"space-between"}
+                  alignItems="center"
+                >
+                  <Box>
+                    <Text display="flex" alignItems="center">
+                      <PhHeartStraightFill color="tomato" fontSize="30px" />
+                      <Text px="1" fontWeight="500" fontSize={"lg"}>
+                        {post.likes}{" "}
+                      </Text>
                     </Text>
-                  </Text>
-                  <Text p="1" fontSize={"xs"} textTransform="uppercase">
-                    {new Date(post.created_at).toLocaleString("en-US", {
-                      year: "numeric",
-                      month: "long",
-                      day: "numeric",
-                    })}{" "}
-                  </Text>
-                  <Box mt={4}>
-                    {post.tags.map((tag, index) => {
-                      return (
-                        <Text
-                          key={index}
-                          borderRadius={8}
-                          mr={2}
-                          display="inline"
-                          border="solid 1px #C0C0C0"
-                          px={2}
-                          py={1}
-                        >
-                          {tag.title}
-                        </Text>
-                      );
-                    })}
+                    <Text p="1" fontSize={"xs"} textTransform="uppercase">
+                      {new Date(post.created_at).toLocaleString("en-US", {
+                        year: "numeric",
+                        month: "long",
+                        day: "numeric",
+                      })}{" "}
+                    </Text>
+                    <Box mt={4}>
+                      {post.tags.map((tag, index) => {
+                        return (
+                          <Text
+                            key={index}
+                            borderRadius={8}
+                            mr={2}
+                            display="inline"
+                            border="solid 1px #C0C0C0"
+                            px={2}
+                            py={1}
+                          >
+                            {tag.title}
+                          </Text>
+                        );
+                      })}
+                    </Box>
                   </Box>
+                  <a
+                    aria-label="Download Link"
+                    href={`${post.links.download}?force=true`}
+                  >
+                    <IconButton
+                      p={2}
+                      variant="outline"
+                      icon={<PhDownloadFill fontSize="40px" />}
+                    />
+                  </a>
                 </Box>
               </Box>
             </ModalBody>
