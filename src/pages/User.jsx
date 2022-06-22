@@ -40,7 +40,7 @@ export function User() {
     <Layout>
       <Box p="8" flexDirection="column" display={"flex"} alignItems="center">
         <Avatar size="4xl" src={user.profile_image.large} />
-        <Box pt="4" textAlign={"center"}>
+        <Box py="4" px="32" textAlign={"center"}>
           <Text fontWeight="bold" fontSize={"4xl"}>
             {user.first_name}{" "}
           </Text>

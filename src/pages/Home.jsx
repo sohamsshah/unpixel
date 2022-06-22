@@ -6,13 +6,14 @@ import { useFetch } from "../hooks/useFetch";
 import { Layout } from "../components/Layout";
 export function Home() {
   const [page, setPage] = useState(1);
+  console.log(process.env);
   function createOptions() {
     return {
       params: {
         page,
         per_page: 10,
         query: "code",
-        client_id: "xT8X9pPIgKIQ9A1H3XQdeFB8ROXAe1pJOOgmMtnCViw",
+        client_id: process.env.REACT_APP_ACCESS_KEY,
       },
     };
   }

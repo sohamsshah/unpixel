@@ -33,7 +33,7 @@ export function Search() {
         per_page: 10,
         query,
         isNewQuery: ref.current.isNewQuery,
-        client_id: "xT8X9pPIgKIQ9A1H3XQdeFB8ROXAe1pJOOgmMtnCViw",
+        client_id: process.env.REACT_APP_ACCESS_KEY,
       },
     };
   }
